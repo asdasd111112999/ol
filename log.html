@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="vue.cjs.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="log.less"/>
+    <script src="less.min.js"></script>
+    <style>
+        .li{
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+<div id="app">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        template: `<div class="box">
+    <div  class="home">
+       <section>
+                <span class="title">开发日志</span>
+                    <div class="li">
+                    <span>v0.01</span>
+                        <br>
+                        <span>初版测试发布</span>
+
+</div>
+      <div class="li">
+                    <span>v0.02</span>
+                        <br>
+                        <span>修复部分bug</span>
+
+</div>
+            </section>
+</div>
+</div>
+        `,
+        data: {},
+        mounted() {
+        },
+        methods: {},
+    });
+</script>
+</body>
+</html>

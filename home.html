@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恶魔城月下OL</title>
+    <script src="vue.cjs.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="home.less"/>
+    <script src="less.min.js"></script>
+</head>
+<body>
+<div id="app">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        template: `<div class="box">
+    <div  class="home">
+       <section>
+                <span class="title">游戏攻略专区</span>
+                <div class="box">
+                   <div v-for="(item,index) of guideItems" class="guideItem" :class="" @click="jumpTo(item.url)">
+                    <img :src="item.img" alt="">
+                    <span class="text">{{item.text}}</span>
+                </div>
+                </div>
+            </section>
+</div>
+</div>
+        `,
+        data: {
+            guideItems: [
+                {
+                    img: 'https://p3.toutiaoimg.com/origin/pgc-image/739aa8436a9c426791c3019bb9ba9678?from=pc',
+                    text: 'Boss打法',
+                    url: 'https://www.bilibili.com/video/BV1yW411v7FM'
+                },
+                {
+                    img: 'https://p3.toutiaoimg.com/origin/pgc-image/739aa8436a9c426791c3019bb9ba9678?from=pc',
+                    text: '隐藏地图'
+                },
+                {
+                    img: 'https://p3.toutiaoimg.com/origin/pgc-image/739aa8436a9c426791c3019bb9ba9678?from=pc',
+                    text: '开挂技巧'
+                },
+                {
+                    img: 'https://p3.toutiaoimg.com/origin/pgc-image/739aa8436a9c426791c3019bb9ba9678?from=pc',
+                    text: '装备预览'
+                },
+                {
+                    img: 'https://p3.toutiaoimg.com/origin/pgc-image/739aa8436a9c426791c3019bb9ba9678?from=pc',
+                    text: '支线任务'
+                },
+                {
+                    img: 'https://p3.toutiaoimg.com/origin/pgc-image/739aa8436a9c426791c3019bb9ba9678?from=pc',
+                    text: '性感小满'
+                },
+            ],
+        },
+        mounted() {
+        },
+        methods: {
+            jumpTo(url) {
+                window.open(url,'_blank')
+            }
+        },
+    });
+</script>
+</body>
+</html>

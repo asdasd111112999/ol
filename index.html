@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>恶魔城月下OL</title>
+    <script src="vue.cjs.js"></script>
+    <link rel="stylesheet/less" type="text/css" href="index.less"/>
+    <script src="less.min.js"></script>
+</head>
+<body>
+<div id="app">
+</div>
+
+<script>
+    new Vue({
+        el: '#app',
+        template: `<div class="ol">
+<header>
+            <img :src="titleURL" alt="">
+            <p class="title">恶魔城月下OL</p>
+            <div>
+                <span v-for="item of navigator" class="nav" :class="{'active':currentName===item.name}"  @click="currentName=item.name;currentSrc=item.url">
+                    {{item.name}}
+                </span>
+            </div>
+          </header>
+
+          <main>
+            <iframe :src="currentSrc" frameborder="0"></iframe>
+            </main>
+        <footer>
+        <span>© 2025 Castlevania: 月下OL — 免费同人游戏.</span>
+        <span>Forged in darkness by <a>月下OL制作组</a></span>
+</footer>
+</div>
+        `,
+        data: {
+            currentName:'首页',
+            currentSrc:'home.html',
+            titleURL: 'https://p3.toutiaoimg.com/origin/pgc-image/739aa8436a9c426791c3019bb9ba9678?from=pc',
+            navigator: [
+                {name: '首页', url: 'home.html'},
+                {name: '攻略', url: 'Strategy.html'},
+                {name: '世界观', url: 'Worldview.html'},
+                {name: '下载', url: 'download.html'},
+                {name: '开发日志', url: 'log.html'},
+            ],
+        },
+        mounted() {
+            console.log(123)
+        },
+        methods: {
+
+        },
+    });
+</script>
+</body>
+</html>
